@@ -29,7 +29,7 @@ public class CategoryResource {
         OperationResult result = OperationResult.success(
                 JsonUtils.getJsonElementWithId(category.getId())
         );
-        logger.debug("retuning the operation result after adding category {}", result);
+        logger.debug("returning the operation result after adding category {}", result);
         return Response
                 .status(HttpCode.CREATED.getCode())
                 .entity(OperationResultJsonWriter.toJson(result))
