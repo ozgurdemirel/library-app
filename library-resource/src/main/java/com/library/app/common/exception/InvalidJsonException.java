@@ -12,6 +12,9 @@ public class InvalidJsonException extends RuntimeException {
         this.msg = msg;
     }
 
+    public InvalidJsonException(Throwable cause) {
+        super(cause);
+    }
 
     public String getMsg() {
         return msg;

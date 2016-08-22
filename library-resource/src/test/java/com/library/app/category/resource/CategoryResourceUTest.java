@@ -15,9 +15,7 @@ import static com.library.app.commontests.category.CategoryForTestsRepository.ca
 import static com.library.app.commontests.category.CategoryForTestsRepository.java;
 import static com.library.commontests.utils.FileTestNameUtils.getPathFileRequest;
 import static com.library.commontests.utils.FileTestNameUtils.getPathFileResponse;
-import static com.library.commontests.utils.JsonTestUtils.assertJsonMatchesExpectedJson;
-import static com.library.commontests.utils.JsonTestUtils.assertJsonMatchesFileContent;
-import static com.library.commontests.utils.JsonTestUtils.readJsonFile;
+import static com.library.commontests.utils.JsonTestUtils.*;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -61,8 +59,8 @@ public class CategoryResourceUTest {
                         getPathFileRequest(PATH_RESOURCE, "newCategory.json")
                 )
         );
-        assertThat(response.getStatus(), is(equalTo(HttpCode.CREATED.getCode())));
-        assertJsonResponseWithFile(response,"categoryExistent.json");
+        assertThat(response.getStatus(), is(equalTo(HttpCode.VALIDATION_ERROR.getCode())));
+         assertJsonResponseWithFile(response,"categoryAlreadyExists.json");
     }
 
 
