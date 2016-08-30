@@ -5,11 +5,13 @@ import com.library.app.common.exceptions.CategoryExistentException;
 import com.library.app.common.exceptions.CategoryNotFoundException;
 import com.library.app.common.exceptions.FieldNotValidException;
 
+import javax.ejb.Local;
 import java.util.List;
 
 /**
  * Created by ozgur.demirel on 28.03.2016.
  */
+@Local
 public interface CategoryServices {
     Category add(Category category) throws FieldNotValidException,CategoryExistentException;
 

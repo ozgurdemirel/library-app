@@ -6,11 +6,13 @@ import com.google.gson.JsonObject;
 import com.library.app.category.model.Category;
 import com.library.app.common.json.JsonReader;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
 
 /**
  * Created by ozgur on 22.05.2016.
  */
+@ApplicationScoped
 public class CategoryJsonConverter {
     public Category convertFrom(final String json) {
         JsonObject jsonObject = JsonReader.readAsJsonObject(json);

@@ -7,6 +7,8 @@ import com.library.app.common.exceptions.CategoryExistentException;
 import com.library.app.common.exceptions.CategoryNotFoundException;
 import com.library.app.common.exceptions.FieldNotValidException;
 
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.util.Iterator;
@@ -16,8 +18,11 @@ import java.util.Set;
 /**
  * Created by ozgur.demirel on 28.03.2016.
  */
+@Stateless
 public class CategoryServicesImpl implements CategoryServices {
+    @Inject
     Validator validator;
+    @Inject
     CategoryRepository categoryRepository;
 
     @Override

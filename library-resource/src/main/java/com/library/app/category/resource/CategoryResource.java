@@ -16,6 +16,7 @@ import com.library.app.common.model.ResourceMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -32,8 +33,9 @@ public class CategoryResource {
 
     private static final ResourceMessage RESOURCE_MESSAGE = new ResourceMessage("category");
 
+    @Inject
     CategoryServices categoryServices;
-
+    @Inject
     CategoryJsonConverter categoryJsonConverter;
 
     @POST
